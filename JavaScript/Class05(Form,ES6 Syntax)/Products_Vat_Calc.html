@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event in Form</title>
+
+    <style>
+        #resultSection {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+    <script>
+        function myFunction() {
+            var unitPrice = parseFloat(document.myForm.unitPrice.value) || 0;
+
+            var quanitity = parseFloat(document.myForm.quantity.value) || 0;
+
+            var discount = parseFloat(document.myForm.discount.value) || 0;
+
+            var vat = parseFloat(document.myForm.vat.value) || 0;
+
+            var totalPrice = unitPrice * quanitity;
+
+            var discountAmount = totalPrice * (discount / 100);
+
+            var vatAmount = totalPrice * (vat / 100);
+
+            var subTotal = totalPrice + vatAmount - discountAmount;
+
+            document.getElementById('TotalPrice').innerHTML = totalPrice.toFixed(2);
+            document.getElementById('DiscountPrice').innerHTML = discountAmount.toFixed(2);
+            document.getElementById('VatAmount').innerHTML = vatAmount.toFixed(2);
+            document.getElementById('SubTotal').innerHTML = subTotal.toFixed(2);
+
+            document.getElementById('resultSection').style.display = 'block';
+        }
+    </script>
+</head>
+
+<body>
+
+    <form name="myForm">
+        <label>Unit Price:</label><br>
+        <input type="number" name="unitPrice" id="UnitPrice"><br><br>
+
+        <label>Quantity:</label><br>
+        <input type="number" name="quantity" id="Quantity"><br><br>
+
+        <label>Discount: (%)</label><br>
+        <input type="number" name="discount" id="Discount"><br><br>
+
+        <label>Vat: (%):</label><br>
+        <input type="number" name="vat" id="Vat"><br><br>
+
+        <button type="button" onclick="myFunction()">Calculate</button><br>
+
+        <div id="resultSection">
+            <label><b>Total Price:</b></label>
+            <span id="TotalPrice">0.00</span><br>
+
+            <label><b>Discount Amount:</b></label>
+            <span id="DiscountPrice">0.00</span><br>
+
+            <label><b>Vat Amount</b></label>
+            <span id="VatAmount">0.00</span><br>
+
+            <label><b>Sub Total</b></label>
+            <span id="SubTotal">0.00</span>
+        </div>
+
+    </form>
+
+</body>
+
+</html>

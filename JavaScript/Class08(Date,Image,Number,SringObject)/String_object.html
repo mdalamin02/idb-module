@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Object Ex.</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var myText = "I'm a novice php programmer";
+
+		document.write("<b>The Original Text is:</b>"+myText+"<br>");
+
+		document.write("<b>The Replaced Text is:</b>"+myText.replace("I'm a novice","I'm a professional")+"<br>");
+
+		var position = myText.search("novice");
+		document.write("The searched string pomsition is:"+position+"<br>");
+		var txetunit = myText.substr(13,10);
+		document.writeln("The substring text is:"+txetunit+"<br>");
+
+		document.write("Fontcolor of the original text is:"+myText.fontcolor("red")+"<br>");
+
+		document.write("Font style of the original text is:"+myText.italics()+"<br>");
+		document.write("Font style of the original text is:"+myText.bold()+"<br>");
+	</script>
+
+</body>
+</html>

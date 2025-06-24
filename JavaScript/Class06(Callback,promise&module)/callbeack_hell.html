@@ -1,0 +1,224 @@
+<!-- <script type="text/javascript">
+	function loginUser(username, callback)
+	{
+		setTimeout(()=>{
+
+			console.log("User logged In:",username);
+			callback(username);
+		},2000);
+	}
+
+	function getUserProfile(username, callback)
+	{
+		setTimeout(()=>{
+			console.log("Fetching profile of:",username);
+			callback({username: username, age: 35});
+		}, 5000);
+	}
+
+	function getUserOrder(profile, callback)
+	{
+		setTimeout(()=>{
+
+			console.log("Fetching Orders of:",profile.username);
+			callback(["order 1", "order 2"]);
+		},5000);
+	}
+
+	loginUser("araman",function(username){
+		getUserProfile(username, function(profile)
+		{
+			getUserOrder(profile, function(orders){
+				console.log("Orders:",orders);
+			});
+		});
+	});
+</script> -->
+
+<!-- <script type="text/javascript">
+	function loginUser(username)
+	{
+		return new Promise()
+	}
+</script> -->
+
+<!-- <script type="text/javascript">
+	let myPromise = new Promise((resolve, reject)=>{
+
+	let abc = true;
+
+	setTimeout(()=>{
+
+			if(abc)
+			{
+				resolve("Successfully Done!");
+			}
+
+			else
+			{
+				reject("Not Success");
+			}
+
+	}, 2000)
+	});
+	
+	myPromise.then(response => alert(response)).catch(error => console.log("Unknown error occured"));
+</script> -->
+
+<script type="text/javascript">
+	function loginUser(username)
+	{
+		return new Promise((resolve, reject)=>{
+
+			setTimeout(()=>{
+
+				if(username)
+				{
+					console.log("User loggedIn:", username);
+					resolve(username);
+				}	
+
+				else
+				{	
+					reject("Username not found");
+				}
+			}, 2000);
+		});
+
+	}
+
+	function getUserProfile(username)
+	{
+		return new Promise((resolve, reject)=>{
+
+				setTimeout(()=>{
+
+				if(username == "araman")
+				{
+					console.log("Fetching Profile of", username);
+					resolve({username: username, age: 40});
+				}	
+
+				else
+				{	
+					reject("Userprofile not found");
+				}
+			}, 5000);
+		})
+	}
+
+	function getUserOrders(profile)
+	{
+		return new Promise((resolve, reject)=>{
+
+				setTimeout(()=>{
+
+				if(profile)
+				{
+					console.log("Fetching Orders of", profile.username);
+					resolve(['Order 1','Order 2']);
+				}	
+
+				else
+				{	
+					reject("No order found");
+				}
+			}, 5000);
+		})
+	}
+
+	/*loginUser("araman").then(getUserProfile).then(getUserOrders).then(orders => {
+
+			console.log("New Orders:", orders);
+	}).catch(error => {
+		console.error("error Occured", error);
+	});*/
+
+	/*async function loadUserOrders()
+	{
+		const username = await loginUser("araman");
+		const profile = await getUserProfile(username);
+		const orders = await getUserOrders(profile);
+		console.log("Orders:", orders);
+	}
+
+	loadUserOrders();*/
+
+</script>
+
+<script type="text/javascript">
+	/*var a = parseInt(prompt("First Number"));
+	var b = parseInt(prompt("Second Number"));
+	var c = parseInt(prompt("Third Number"));
+
+	if( a < b)
+	{
+		temp = a;
+		a = b;
+		b = temp;
+	}
+
+	if( a < c)
+	{
+		temp = a;
+		a = c;
+		c = temp;
+	}
+
+	if( b < c)
+	{
+		temp = b;
+		b = c;
+		c = temp;
+	}
+
+	document.write(a+", "+b+", "+c);*/
+</script>
+
+<script type="text/javascript">
+	function getNumbers(orders)
+	{
+		return new Promise((resolve, reject) => {
+
+			const input = prompt(`Enter numbers ${orders}:`);
+			const number = parseFloat(input);
+
+			if(!isNaN(number))
+			{	
+				resolve(number);
+			}
+
+			else
+			{
+				reject("Invalid input");
+			}
+		});
+	}
+
+	Promise.all([getNumbers(1), getNumbers(2), getNumbers(3)]).then(numbers => {
+
+			const [a,b,c] = numbers;
+
+			let largest;
+
+			if(a >= b && a >= c)
+			{
+				largest = a;
+			}
+
+			else if(b >= a && b >=c)
+			{
+				largest = b;
+			}
+
+			else
+			{
+				largest = c;
+			}
+
+			alert(`The largest number is: ${largest}`);
+	}).catch(error => {
+
+		alert("Error:", error);
+	});
+</script>

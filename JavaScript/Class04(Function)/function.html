@@ -1,0 +1,137 @@
+<!-- <script>
+    function nyname() {
+        var a = 10;
+        var b = 13;
+        var c = a + b
+        alert(c)
+    }
+    nyname()
+</script> -->
+
+<!-- <div id="mytotal"></div>
+<script>
+    function total() {
+        var a = parseInt(prompt("Enter First Number:"))
+        var b = parseInt(prompt("Enter second Number:"))
+
+        var c = a + b;
+        document.getElementById("mytotal").innerHTML = c;
+    }
+    total()
+</script> -->
+
+<script>
+    var xyz = 500
+
+    function a() {
+        // var xyz = 200;
+        if (xyz == 500) {
+            document.write("Good!")
+        }
+    }
+    function b() {
+        var abc = 200;
+        document.write(xyz)
+    }
+
+    a()
+    // b()
+</script>
+<!-- <script type="text/javascript">
+	function xyz()
+	{
+		var a = 10;
+		var b = 13;
+		var c = a + b;
+		return c;		
+	}
+	alert(xyz());
+</script> -->
+
+<!-- Ternary Operator ? : -->
+
+<!-- <script type="text/javascript">
+	var num = 2;
+
+	(num >= 5) ? alert("Number is big!") : alert("Number is small"); 
+
+	//Multiple Condition
+
+	var marks = 55;
+
+	var res = (marks < 40) ? "Unsatisfactory" :
+			  (marks < 60) ? "Average" :
+			  (marks < 80) ? "Good!" : "Excellent";
+
+	document.write(res);	  
+</script> -->
+
+<!--Arrow Function (ES6 edition)-->
+<!-- <script type="text/javascript">
+	var x = (x, y)=> x * y;
+
+	alert(x(10,5));
+
+	var num = 20;
+
+	var check = (num >=10) ? ()=>alert("Num is big!") : ()=>alert("Num is small");
+	check();
+
+	let sum = (a,b)=>
+	{
+		let result = a + b;
+		return result;
+	}
+	let res = sum(10,12);
+	alert(res);
+</script> -->
+
+<!--Function as Expression-->
+
+<!-- <script type="text/javascript">
+	var abc = function(square, xyz)
+	{
+		return square * xyz;
+	}
+
+	document.write(abc(3,5));
+
+	var x = abc(2,8);
+	alert(x);
+</script> -->
+
+<h2>Products Billing</h2>
+<div id="output"></div>
+
+<script type="text/javascript">
+    let productName = "Smart Phone";
+    let productPrice = 15000; //unit price
+    let quantity = 2;
+    let vat = 10; //in percent
+
+    function calculateTotal(price, qty) {
+        let total = price * qty;
+
+        function addVAT(vatRate) //Nested function for calculating VAT
+        {
+            let vatAmount = (total * vatRate) / 100;
+            return total + vatAmount;
+        }
+
+        return addVAT(vat);
+    }
+
+    let finalAmount = calculateTotal(productPrice, quantity);
+
+    document.getElementById('output').innerHTML = `
+
+													<p><b>Product:</b>${productName}</p>
+													<p><b>Unit Price:</b>${productPrice}</p>
+													<p><b>Quantity:</b>${quantity}</p>
+
+													<p><b>VAT:</b>${vat}%</p>
+													<hr>
+													<p><b>Total Amount(including VAT):</b>${finalAmount.toFixed(2)}BDT</p>
+												`
+
+</script>

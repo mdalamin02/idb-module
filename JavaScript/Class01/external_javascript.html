@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>External JavaScript Example</title>
+	<script src="js/script.js"></script>
+
+	<script type="text/javascript">
+		document.write("<h4>Welcome...</h4>");
+	</script>
+</head>
+
+<body style="text-align: center; color:white">
+	<h1 style="color: red;">To my Website</h1>
+
+	<p id="showname"></p>
+
+	<button onclick="document.body.style.cssText=`
+	
+	background: red ;
+	text: white;
+	
+	`">Red</button>
+	<button onclick="document.body.style.cssText=`
+	background: green;
+	text: white;
+	
+	`">Green</button>
+	<button onclick="document.body.style.cssText=`
+	
+	background: black;
+	text:white;
+	
+	`">Black</button>
+</body>
+
+</html>

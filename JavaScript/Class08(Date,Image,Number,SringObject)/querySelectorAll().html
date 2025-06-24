@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>query selector ex</title>
+	<style>
+		div
+		{
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h1>Welcome</h1>
+		<p>This is a paragraph</p>	
+	</div>
+
+	<div>
+		<h1>Welcome</h1>
+		<p>This is a paragraph two</p>	
+	</div>
+
+	<div>
+		<h1>Welcome</h1>
+		<p>This is a paragraph three</p>	
+	</div>
+
+	<div>
+		<h1>Welcome</h1>
+		<p>This is a paragraph four</p>	
+	</div>
+
+	<button type="button" onclick="func1()">Change Color</button>
+
+	<script type="text/javascript">
+		function func1()
+		{
+			var xyz = document.querySelectorAll("div > p");
+			
+			xyz.forEach(p => {
+
+				p.style.color = 'orange';
+
+			});
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ES6 Syntax</title>
+</head>
+
+<body>
+    <!-- <script type="text/javascript">
+		//Template Literal
+		let name = "John";
+		let message = `Hello, ${name}`;
+		document.write(message);
+
+		document.write("<br>");
+
+		let multiline = `This is 
+						a multiuline
+						comment`;
+		document.write(multiline);
+
+		document.write("<br>");
+
+		function greetings(name = "Guest")
+		{
+			return `Hello, ${name}`;
+		}
+
+		document.write(greetings("Asad"));
+	</script> -->
+
+    <!-- <script type="text/javascript">
+		//Destructuring
+
+		let [a,b,c] = [10,20,30];
+		document.write(a,b,c);
+
+		document.write("<br>");
+
+		//Object Destructure
+
+		let person = {"name": "Asad","age": 35};
+		let {name, age} = person;
+		document.write(name, age);
+		
+		//Simple JS Object
+
+		/*const person = {
+
+					"name": "Araman",
+					"age" : 45,
+					"city": "Comilla"
+		}; 
+
+		document.write(person.name);
+		document.write(person.age);
+
+		document.write("<br>");
+
+			const student = {
+
+					"id": 1001,
+					"name": "Sohag",
+					"grade": "A",
+					"subjects": ["Math","Physics","IT"]
+			};
+
+			document.write("Name:"+student.name+"<br>");
+			document.write(student.grade);
+			document.write(student.subjects[0]);
+*/
+	</script> -->
+
+    <script type="text/javascript">
+        //Sprade Operator (...)
+
+        //array or ojects value copy or expand
+
+        /*let arr = [10,20,30];
+
+        let copyarr = arr;//It will share reference
+
+        copyarr.push(40);
+
+        console.log(copyarr);*/
+
+        let arr2 = [10, 20, 30];
+        let copy = [...arr2];
+
+        copy.push(40);
+        console.log(copy);
+
+        let arr3 = [1, 2, 3];
+        let arr4 = [4, 5, 6];
+
+        let merge = [...arr3, ...arr4];
+        console.log(merge);
+
+        let numbers = [1, 2, 3];
+        let updatenumbers = [0, ...numbers, 4];
+        console.log(numbers);
+
+        let person1 = { name: "Asad", age: 35 };
+
+        let person2 = { ...person1 };
+
+        person2.age = 50;
+
+        console.log(person2.age);
+        /*
+                let xy = ()=>
+                {
+                    console.log(arguments); //It gives a reference error
+                }
+        
+                xy(2,4,5);*/
+
+        /*let t = (...n)=>
+        {
+            console.log(n);
+        }
+
+        t(10,20,30,40);*/
+
+        function sum(a, b, c) {
+            return a + b + c;
+        }
+
+        let sums = [1, 2, 3];
+        console.log(sum(...sums));
+
+    </script>
+
+</body>
+
+</html>

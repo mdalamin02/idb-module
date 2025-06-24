@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Object</title>
+	<style type="text/css">
+		.result
+		{
+			font-size: 18px;
+			font-weight: bold;
+			color: purple;
+		}
+
+		body
+		{
+			font-family: "Arial", sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div class="result">
+		
+	</div>
+
+	<button type="button" class="bnt">See Notice</button>
+	<h4>***Click the button above to load the notice***</h4>
+
+	<script>
+		var resEle = document.querySelector(".result");
+		var btnEle = document.querySelector(".bnt");
+
+		var newImage = new Image(500,300);
+		newImage.src = "images/notice.png";
+
+		btnEle.addEventListener('click',()=>{
+
+			resEle.appendChild(newImage);
+		});
+
+
+	</script>
+
+</body>
+</html>
