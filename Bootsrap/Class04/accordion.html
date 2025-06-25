@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BS Typography</title>
+
+	<link rel="stylesheet" type="text/css" href="bs/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" integrity="sha512-rt/SrQ4UNIaGfDyEXZtNcyWvQeOq0QLygHluFQcSjaGB04IxWhal71tKuzP6K8eYXYB6vJV4pHkXcmFGGQ1/0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<style type="text/css">
+		body
+		{
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+		}
+
+		.content
+		{
+			flex: 1;
+		}
+	</style>
+
+	
+</head>
+<body style="background: url('images/solid.png'); height: 100%; background-size: cover;">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img src="images/pic06.jpg" height="30px" width="40px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Services</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+          Courses
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Web Design</a>
+          <a class="dropdown-item" href="#">Web Development</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Oracle Cloud Computing</a>
+          <a class="dropdown-item" href="#">Software Development using C#.Net</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">Buy Plan</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="container content">
+<h1 class="display-4 text-center my-4">Accordion</h1>
+<div class="row mt-3">
+  <div class="col-lg-4">
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-success btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne">
+              Collapsible Group Item#1
+            </button>
+          </h2>
+        </div>
+        <div id="collapseOne" class="collapse" data-parent="#accordionExample">
+          <div class="card-body">
+            some placeholder contenet for the first accordion panel. This panel is shown by default, thanks to the <code>show</code>class.
+          </div>
+        </div>
+      </div>
+
+       <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-success btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo">
+              Collapsible Group Item#2
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
+          <div class="card-body">
+            some placeholder contenet for the first accordion panel. This panel is shown by default, thanks to the <code>show</code>class.
+          </div>
+        </div>
+      </div>
+
+       <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-success btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree">
+              Collapsible Group Item#3
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+          <div class="card-body">
+            some placeholder contenet for the first accordion panel. This panel is shown by default, thanks to the <code>show</code>class.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</body>
+</html>
