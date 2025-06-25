@@ -1,0 +1,18 @@
+<script>
+  class Students {
+    constructor(name, subject, dept) {
+      this.name = name;
+      this.subject = subject;
+      this.dept = dept;
+    }
+    getDetails() {
+      return `The student of the student is ${this.subject} and the name is ${this.name}`;
+    }
+  }
+
+  var s = new Students("Alamin", "Math", "Science");
+  var s2 = new Students("Asad", "CSE", "CSE");
+
+  document.write(s.getDetails());
+  document.write(s.getDetails());
+</script>

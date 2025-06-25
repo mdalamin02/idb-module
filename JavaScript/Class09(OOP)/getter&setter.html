@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getter & Stter Method</title>
+  </head>
+  <body>
+    <script>
+      class Students {
+        constructor() {
+          var name;
+          var marks;
+        }
+        setName(name) {
+          this.name = name;
+        }
+        setMarks(marks) {
+          this.marks = marks;
+        }
+        getName() {
+          return this.marks;
+        }
+        getMarks() {
+          return this.marks;
+        }
+      }
+
+      var s = new Students();
+      s.setName("Alamin");
+      s.setMarks(90);
+
+      var s2 = new Students();
+
+      document.write("The name is" + s.getName() + " ");
+      document.write("and the mark is :" + s.getMarks() + "<br>");
+
+      document.write("The name is" + s2.getName() + " ");
+      document.write("and the mark is :" + s2.getMarks() + "<br>");
+    </script>
+  </body>
+</html>
