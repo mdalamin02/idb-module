@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polymorphism Another Ex</title>
+  </head>
+  <body>
+    <h2>Select Payment Method</h2>
+    <div class="payment-container">
+      <form id="paymentForm">
+        <label>
+          <input
+            type="radio"
+            name="paymentMethod"
+            value="Cash"
+            onclick="showInputAmount()"
+          />Cash </label
+        ><br />
+        <label>
+          <input
+            type="radio"
+            name="paymentMethod"
+            value="creditCard"
+            onclick="showInputAmount()"
+          />Credit Card</label
+        ><br />
+        <label>
+          <input
+            type="radio"
+            name="paymentMethod"
+            value="PayPal"
+            onclick="showInputAmount()"
+          />PayPal </label
+        ><br />
+
+        <div id="amountDiv" class="amount-input">
+          <label>Enter Amount: </label>
+          <input
+            type="number"
+            name="amount"
+            id="amount"
+            placeholder="Enter Amount"
+          />
+          <button type="button" onclick="processPayment()">Submit</button>
+        </div>
+      </form>
+    </div>
+    <h3 id="output"></h3>
+    <script>
+      class Payment {
+        constructor(amount) {
+          this.amount = amount;
+        }
+        pay() {
+          return `Paid ${this.amount} using default method`;
+        }
+      }
+      class CashPayment extends Payment {
+        pay() {
+          return `Paid ${this.amount} in Cash`;
+        }
+      }
+      class CreditCardPayment extends Payment {
+        pay() {
+          return `Paid ${this.amount} in Credit Card`;
+        }
+      }
+      class PaypalPayment extends Payment {
+        pay() {
+          return `Paid ${this.amount} via Paypal`;
+        }
+      }
+
+      function showInputAmount() {
+        document.getElementById("amountDiv").style.display = "block";
+      }
+
+      function processPayment() {
+        let selectMethod = document.querySelector(
+          "input[name='paymentMethod']:checked"
+        );
+
+        let amount = document.getElementById("amount").value;
+
+        if (!selectMethod || amount === "") {
+          alert("Please select a payment method and enter amount");
+        }
+        let payment;
+        switch (selectMethod.value) {
+          case "Cash":
+            payment = new CashPayment(amount);
+            break;
+
+          case "creditCard":
+            payment = new CreditCardPayment(amount);
+            break;
+
+          case "PayPal":
+            payment = new PaypalPayment(amount);
+            break;
+
+          default:
+            payment = new payment(amount);
+        }
+        document.getElementById("output").innerText = payment.pay();
+      }
+    </script>
+  </body>
+</html>

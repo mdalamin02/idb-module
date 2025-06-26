@@ -48,7 +48,22 @@
           super(userName, email, password);
           this.memberpackage = memberpackage;
         }
+        getPackage() {
+          document.write(
+            this.userName +
+              "has subscribed to the" +
+              this.memberpackage +
+              "package"
+          );
+        }
       }
+      // let alamin = new Member("Alamin", "alamin@gmail", "123456", "Standard");
+
+      // alamin.login("Alamin", 123456);
+      // document.write(alamin.userName);
+      // document.write(alamin.password);
+
+      // alamin.getPackage();
     </script>
   </body>
 </html>
