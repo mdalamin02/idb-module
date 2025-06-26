@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Pattern | Asynchronous JavaScript</title>
+</head>
+
+<body>
+    <script>
+
+        const paymentSuccess = true
+
+        function enroll(callback) {
+
+            console.log("Course enrollment is in progress");
+
+            setTimeout((Callback) => {
+                if (paymentSuccess) {
+                    Callback()
+                } else {
+                    console.log("Payment failed");
+
+                }
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,52 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Private Access Modifier</title>
-  </head>
-  <body>
-    <script>
-      class User {
-        #password;
-        #pin; // Private member (encapsulated)
-        constructor(userName, email, password, pin) {
-          this.userName = userName;
-          this.email = email;
-          this.#password = password;
-          this.#pin = pin;
-        }
-        login(userName, password, pin) {
-          if (
-            this.userName == userName &&
-            this.#password == password &&
-            this.#pin == pin
-          ) {
-            console.log("Login Successful");
-          } else {
-            console.log("Authentication failed");
-          }
-        }
-        register() {
-          console.log(this.userName + " " + "is now registered");
-        }
-        setPassword(newPassword) {
-          this.#password = newPassword;
-        }
-        setPin(newPin) {
-          this.#pin = newPin;
-        }
-      }
-      let alamin = new User("Alamin", "alamin@gmail.com", "123456", "4889");
-      alamin.register();
-      alamin.setPassword("11111");
-      alamin.login("Alamin", "11111", "4889");
-      document.write(alamin.password);
 
-      class Member extends User {
-        constructor(userName, email, password, memberpackage) {
-          super(userName, email, password);
-          this.memberpackage = memberpackage;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Access Modifier</title>
+</head>
+
+<body>
+  <script>
+
+    //Class in JavaScript
+
+    class User {
+      #password;
+      #pin; // Private member (encapsulated)
+      constructor(userName, email, password, pin) {
+        this.userName = userName;
+        this.email = email;
+        this.#password = password;
+        this.#pin = pin;
+      }
+      login(userName, password, pin) {
+        if (
+          this.userName == userName &&
+          this.#password == password &&
+          this.#pin == pin
+        ) {
+          console.log("Login Successful");
+        } else {
+          console.log("Authentication failed");
         }
         getPackage() {
           document.write(
@@ -57,6 +40,7 @@
           );
         }
       }
+<<<<<<< HEAD
       // let alamin = new Member("Alamin", "alamin@gmail", "123456", "Standard");
 
       // alamin.login("Alamin", 123456);
@@ -67,3 +51,34 @@
     </script>
   </body>
 </html>
+=======
+      register() {
+        console.log(this.userName + " " + "is now registered");
+      }
+      setPassword(newPassword) {
+        this.#password = newPassword;
+      }
+      setPin(newPin) {
+        this.#pin = newPin;
+      }
+    }
+    let alamin = new User("Alamin", "alamin@gmail.com", "123456", "4889");
+    alamin.register();
+    alamin.setPassword("11111");
+    alamin.login("Alamin", "11111", "4889");
+    document.write(alamin.password);
+
+    //Inheritance 
+
+    class Member extends User {
+      constructor(userName, email, password, memberpackage) {
+        super(userName, email, password);
+        this.memberpackage = memberpackage;
+      }
+      
+    }
+  </script>
+</body>
+
+</html>
+>>>>>>> fb18200b9b98b4c810bbf339b43f4003131f0015

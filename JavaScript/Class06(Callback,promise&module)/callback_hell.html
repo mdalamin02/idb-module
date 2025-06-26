@@ -66,20 +66,17 @@
 </script> -->
 
 <script type="text/javascript">
-	function loginUser(username)
-	{
-		return new Promise((resolve, reject)=>{
+	function loginUser(username) {
+		return new Promise((resolve, reject) => {
 
-			setTimeout(()=>{
+			setTimeout(() => {
 
-				if(username)
-				{
+				if (username) {
 					console.log("User loggedIn:", username);
 					resolve(username);
-				}	
+				}
 
-				else
-				{	
+				else {
 					reject("Username not found");
 				}
 			}, 2000);
@@ -87,40 +84,34 @@
 
 	}
 
-	function getUserProfile(username)
-	{
-		return new Promise((resolve, reject)=>{
+	function getUserProfile(username) {
+		return new Promise((resolve, reject) => {
 
-				setTimeout(()=>{
+			setTimeout(() => {
 
-				if(username == "araman")
-				{
+				if (username == "araman") {
 					console.log("Fetching Profile of", username);
-					resolve({username: username, age: 40});
-				}	
+					resolve({ username: username, age: 40 });
+				}
 
-				else
-				{	
+				else {
 					reject("Userprofile not found");
 				}
 			}, 5000);
 		})
 	}
 
-	function getUserOrders(profile)
-	{
-		return new Promise((resolve, reject)=>{
+	function getUserOrders(profile) {
+		return new Promise((resolve, reject) => {
 
-				setTimeout(()=>{
+			setTimeout(() => {
 
-				if(profile)
-				{
+				if (profile) {
 					console.log("Fetching Orders of", profile.username);
-					resolve(['Order 1','Order 2']);
-				}	
+					resolve(['Order 1', 'Order 2']);
+				}
 
-				else
-				{	
+				else {
 					reject("No order found");
 				}
 			}, 5000);
@@ -176,20 +167,17 @@
 </script>
 
 <script type="text/javascript">
-	function getNumbers(orders)
-	{
+	function getNumbers(orders) {
 		return new Promise((resolve, reject) => {
 
 			const input = prompt(`Enter numbers ${orders}:`);
 			const number = parseFloat(input);
 
-			if(!isNaN(number))
-			{	
+			if (!isNaN(number)) {
 				resolve(number);
 			}
 
-			else
-			{
+			else {
 				reject("Invalid input");
 			}
 		});
@@ -197,26 +185,23 @@
 
 	Promise.all([getNumbers(1), getNumbers(2), getNumbers(3)]).then(numbers => {
 
-			const [a,b,c] = numbers;
+		const [a, b, c] = numbers;
 
-			let largest;
+		let largest;
 
-			if(a >= b && a >= c)
-			{
-				largest = a;
-			}
+		if (a >= b && a >= c) {
+			largest = a;
+		}
 
-			else if(b >= a && b >=c)
-			{
-				largest = b;
-			}
+		else if (b >= a && b >= c) {
+			largest = b;
+		}
 
-			else
-			{
-				largest = c;
-			}
+		else {
+			largest = c;
+		}
 
-			alert(`The largest number is: ${largest}`);
+		alert(`The largest number is: ${largest}`);
 	}).catch(error => {
 
 		alert("Error:", error);
