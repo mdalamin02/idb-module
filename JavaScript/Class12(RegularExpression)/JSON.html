@@ -1,0 +1,40 @@
+<script>
+    const data = {
+        name: "john",
+        "age": 34,
+        "hobbies": {
+            "reading": true,
+            "gaming": false,
+            "sports": "football"
+        },
+        "class": ["Javascript", "HTML", "CSS"]
+    };
+
+    console.log(data.name);
+    console.log(data.hobbies);
+    console.log(data.hobbies.sports);
+    console.log(data.class[1]);
+
+
+    const jsonData = '{"name": "jhon", "age": 35}';
+    const obj = JSON.parse(jsonData)
+    console.log(obj);
+
+    //Converting Javascript object to JSON Data
+
+    const jsonData2 = { name: "Alamin", age: 35 };
+    const obj2 = JSON.stringify(jsonData2)
+    console.log(obj2);
+
+    // ++i (pre-increment)
+    // i++ (post-increment)
+
+    let a = 5;
+    let b = a++;
+    let c = a;
+
+    document.write(a + "<br>")
+    document.write(b + "<br>")
+    document.write(b + "<br>")
+    document.write(c)
+</script>

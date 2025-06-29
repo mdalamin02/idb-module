@@ -1,80 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tainee Data Form</title>
-  </head>
-  <body>
-    <form id="taineeform">
-      <label>Name:</label><br />
-      <input type="text" name="name" id="name" /><br />
+<html>
+<head>
+	<title>Trainee Data Form</title>
+</head>
+<body>
 
-      <label>Contact:</label><br />
-      <input type="text" id="contact" name="contact" /><br />
+	<form id="traineeform">
+		<label>Name:</label><br>
+		<input type="text" name="name" id="name"><br>
+		<label>Contact:</label><br>
+		<input type="text" name="contact" id="contact"><br>
+		<label>Address:</label><br>
+		<textarea name="address" id="address" rows="4" cols="50"></textarea><br>
+		<label>Sex:</label><br>
+		<input type="radio" name="sex" id="male" value="Male">
+		<label>Male</label>
+		<input type="radio" name="sex" id="female" value="Female">
+		<label>Female</label><br>
+		<label>Select Courses:</label><br>
+		<input type="checkbox" name="course" id="nt" value="NT">
+		<label>NT</label><br>
+		<input type="checkbox" name="course" id="wdpf" value="WDPF">
+		<label>WDPF</label><br>
+		<input type="checkbox" name="course" id="ddd" value="DDD">
+		<label>DDD</label><br>
+		<input type="checkbox" name="course" id="esad" value="ESAD">
+		<label>ESAD</label><br>
 
-      <label>Address:</label><br />
-      <input type="text" id="address" name="address" /><br />
+		<label>Select Location:</label><br>
+		<select name="location" id="location">
+			<option value="Banani">Banani</option>
+			<option value="Dhanmondi">Dhanmondi</option>
+			<option value="Mirpur">Mirpur</option>		
+		</select><br><br>
 
-      <label>Sex:</label>
-      <input type="radio" name="sex" value="male" id="male" />
-      <input type="radio" name="sex" value="female" id="female" /><br />
+		<button type="button" onclick="submitForm()">Submit</button>
+	</form>
 
-      <label>Select Couses: </label><br />
-      <input type="checkbox" name="couse" value="NT" id="nt" /><label>NT</label
-      ><br />
-      <input type="checkbox" name="couse" value="WDPF" id="wdpf" /><label
-        >WDPF</label
-      ><br />
-      <input type="checkbox" name="couse" value="DDD" id="ddd" /><label
-        >DDD</label
-      ><br />
-      <input
-        type="checkbox"
-        name="couse"
-        value="ESAD"
-        id="esad"
-      /><label></label>ESAD<br />
+	<script type="text/javascript">
+		class Trainee
+		{
+			constructor(name, contact, address, sex, courses, location)
+			{
+				this.name = name;
+				this.contact = contact;
+				this.address = address;
+				this.sex = sex;
+				this.courses = courses;
+				this.location = location;
+			}
 
-      <button type="button" onclick="submitForm()">Submit</button>
+			getFormattedData()
+			{
+				return `Name: ${this.name}\nContact: ${this.contact}\n Address: ${this.address}\nSex:${this.sex}\nCourses:${this.courses.join(",")}\nLocation:${this.location}`;
+			}
 
-      <script>
-        class Trainee {
-          constructor(name, contact, address, sex, courses, location) {
-            this.name = name;
-            this.contact = contact;
-            this.address = address;
-            this.sex = sex;
-            this.courses = courses;
-            this.location = location;
-          }
-          getFormattedData() {
-            return `Name:${this.name}\n Contact: ${this.contact}\n Address: ${this.address}\n Sex:${this.sex}\n Courses: ${this.courses} \n Location:${this.location}`;
-          }
-        }
-        function submitForm() {
-          const name = document.getElementById("name").value;
-          const contact = document.getElementById("name").value;
-          const address = document.getElementById("address");
-          const sex = document.querySelector('input[name:"sex"]:checked');
-          const couses = Array.from(
-            document
-              .querySelectorAll('input[name:"course"]:checked')
-              .map((course) => course.value)
-          );
-          const location = document.getElementById("location").value;
-          const trainee = new Trainee(
-            name,
-            contact,
-            address,
-            sex,
-            couses,
-            location
-          );
-          const trainee = new Trainee.getFormattedData();
-          const newWind 
-        }
-      </script>
-    </form>
-  </body>
+
+		}
+
+		function submitForm()
+			{
+				const name = document.getElementById('name').value;
+				const contact = document.getElementById('contact').value;
+				const address = document.getElementById('address').value;
+				const sex = document.querySelector('input[name="sex"]:checked').value;
+				const courses = Array.from(document.querySelectorAll('input[name="course"]:checked')).map(course=>course.value);
+				const location = document.getElementById('location').value;
+				const trainee = new Trainee(name, contact, address, sex, courses, location);
+				const formattedData = trainee.getFormattedData();
+				const newWindow = window.open("","_blank");
+				newWindow.document.write("<pre>"+formattedData+"</pre>");
+			}
+	</script>
+
+</body>
 </html>

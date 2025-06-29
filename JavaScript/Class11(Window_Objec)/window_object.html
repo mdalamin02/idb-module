@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Window Object Methods</title>
   </head>
   <body>
+    <script type="text/javascript">
+      function simpleWindow() {
+        var win = window.open(
+          "polymorphismEx2.html",
+          "_blank",
+          "width=400, height=300"
+        );
+      }
+
+      function closeWin() {
+        window.close();
+      }
+    </script>
+
     <button type="button" onclick="simpleWindow()">Open File</button>
     <button type="button" onclick="window.print()">Print</button>
     <button type="button" onclick="closeWin()">Close</button>
-    <script></script>
   </body>
 </html>
