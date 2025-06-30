@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1, 
+        "doctor_name": "Md. Ahmed",
+        "photograph" : "image/doc1.png",
+        "vising_hour": "10:00 AM - 2:00 PM",
+        "speciality": "Physical Medicine",
+        "fees": 800
+    },
+    {
+        "id": 2, 
+        "doctor_name": "Md. Ruhul",
+        "photograph" : "image/doc2.png",
+        "vising_hour": "11:00 AM - 4:00 PM",
+        "speciality": "Gynocologist",
+        "fees": 500
+    },
+    {
+        "id": 3, 
+        "doctor_name": "Hasan Rabbi",
+        "photograph" : "image/doc3.png",
+        "vising_hour": "10:00 AM - 2:00 PM",
+        "speciality": "Encydology",
+        "fees": 700
+    },
+    {
+        "id": 4, 
+        "doctor_name": "Mr. Rubel",
+        "photograph" : "image/doc4.png",
+        "vising_hour": "8:00 PX - 11:00 PM",
+        "speciality": "Pediactrict",
+        "fees": 1000
+    }
+]

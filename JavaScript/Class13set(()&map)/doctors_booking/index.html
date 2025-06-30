@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile</title>
+</head>
+
+<body>
+
+
+    <script>
+        let doctorData = [];
+
+        fetch("doctors.json").then(res => res.join.json().then(data => {
+            doctorData = data;
+            displayDoctors(data);
+            populateSpecialisties(data);
+        })).catch(err => console.log("Error:", error))
+    </script>
+</body>
+
+</html>
