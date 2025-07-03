@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting - Decending Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 10px;
+        }
+
+        output {
+
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Enter Numbers:</h2>
+    <input type="text" name="NumberInput" id="NumberInput" placeholder="Eg. 10, 24,53, 45">
+    <button onclick="sortNumbers()">Submit</button>
+    <div id="output"></div>
+</body>
+<script>
+    function sortNumbers() {
+        let input = document.getElementById("numnerInput").value
+        let numbers = input.split(",").map(num => parseFloat(num.trim()))
+        let sortNumbers = numbers.filter(num => !isNaN(num)).sort((a, b) => b - a);
+        document.getElementById("output").innerHTML = "Sorted Number:" + sortNumbers.join(",")
+    }
+</script>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Largest Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 10px;
+        }
+
+        output {
+
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="NumberInput" id="NumberInput" placeholder="Eg. 10, 24,53, 45">
+    <button onclick="findMax()">Submit</button>
+    <div id="output"></div>
+
+    <script>
+        function findMax() {
+            let input = document.getElementById("NumberInput").value;
+            // let arr = [input]
+            let numbers = input.split(",").map(num => parseFloat(num.trim()))
+            let maxnumber = null
+            for (var i = 0; i < numbers.length; i++) {
+                if (!isNaN(numbers[i])) {
+                    if (maxnumber == null || numbers[i] > maxnumber) {
+                        maxnumber = numbers[i]
+                    }
+                }
+            }
+
+            if (maxnumber != null) {
+
+                document.getElementById("output").innerHTML = "The largest number:" + maxnumber
+            }
+            else {
+                document.getElementById("output").innerHTML = "No number found"
+            }
+        }
+    </script>
+</body>
+
+</html>
