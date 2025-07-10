@@ -17,11 +17,10 @@ $student = array (
         "id" => "120742",
         "subject" => "Oracle"
         )
-    ) ;
+    );
 
 
-    foreach ($student as $value)
-    {
+    foreach ($student as value){
         foreach ($value as $key => $val)
         {
             print "$key:$val <br>";
