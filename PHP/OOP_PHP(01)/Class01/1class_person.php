@@ -14,19 +14,15 @@ class Person
         $this->weight = 25;
         $this->profession = "student";
     }
-
-
-
     public function __destruct()
     {
         echo $this-> name."is cooking food<br>";
     }
-
-    public function__function cook()
+    public function cook()
     {
-        echo $this-> name."is cooing food<br>"
+        echo $this-> name."is cooing food<br>";
     }
-    public function__function eat()
+    public function eat($food, $calorie)
     {
         echo $this-> name."is eating".$food."with".$calorie."calorie"."<br>";
     }
@@ -35,11 +31,9 @@ class Person
         echo $this->name."is eating".$food."with".$calorie."calorie"."<br>";
         $this->weight += ($calorie/1000);
     }
-
     public function sleep()
     {
         echo $this->name."is sleeping <br>";
     }
 }
-
 ?>
