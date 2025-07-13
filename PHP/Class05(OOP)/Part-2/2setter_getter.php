@@ -20,7 +20,4 @@ $emp1->name= "Md Al-Amin";
 echo"<br>";
 $emp1->setPin(1001);
 $emp1->showInfo();
-
-
-
 ?>
