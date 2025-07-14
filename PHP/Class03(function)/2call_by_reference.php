@@ -1,16 +1,19 @@
 <?php
-
-function salesTax($price, $tax)
+function addFive ($num)
 {
-    function convert_bdt($dollar, $conversion = 120)
-    {
-        return $dollar* $conversion;
-    }
-
-    $total = $price+ ($price*$tax);
-    echo "Total const in $: $total"."."." Cost in BDT is: "." ".convert_bdt($total);
-  
+$num += 5;
+echo "$num <br>";
 }
-salesTax(15.5, .75);
+
+function addSix($num)
+{
+    $num += 6;
+    echo "$num <br>";
+}
+
+$pasNum = 10;
+ 
+addFive($pasNum);
+addSix($pasNum);
 
 ?>

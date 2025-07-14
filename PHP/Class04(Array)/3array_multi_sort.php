@@ -1,24 +1,29 @@
 <?php
-$arr = array(
+/* 
+$arr1 = array("k", "f", "e", "a", "x", "z", "w");
+array_multisort($arr1);
+ */
 
-    array("country"=> "Bangladesh","Capital" => "Dhaka"),
-    array("country"=> "India","Capital" => "Delhi"),
-    array("country"=> "USA","Capital" => "Washionton DC"),
-    array("country"=> "Canada","Capital" => "Autoa")
-);
-    $capitals = array();
+ $result = array(
 
-    foreach($arr as $key => $value)
-    {
-        $capitals[$key] = $value["country"];
-    }
+                    array("Country"=>"Bangladesh", "Capital" => "Dhaka"),
+                    array("Country"=>"Pakistan", "Capital" => "karachi"),
+                    array("Country"=>"Afganistan", "Capital" => "Kabul"),
+                    array("Country"=>"Turkey", "Capital" => "Istambul"),
+                    );
 
-    array_multisort($capitals, SORT_DESC, $result);
+$capitals = array();
 
-print_r("Modified arrays are:<br>");
+
+foreach ($result as $key => $value){
+
+    $capitals[$key] = $value["Country"];
+}
+
+array_multisort($capitals, SORT_ASC, $result);
+
+
 echo "<pre>";
 print_r($result);
 echo "</pre>";
-
- 
 ?>
