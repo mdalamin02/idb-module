@@ -50,6 +50,22 @@ class BankAccount
     }
 }
 
+echo "<br>";
+// 
+if ($account->checkPin(1234)) {
+    echo "PIN is correct!<br>";
+} else {
+    echo "PIN is incorrect!<br>";
+}
+
+// Wrong PIN test
+echo "Testing wrong PIN: ";
+if ($account->checkPin(5678)) {
+    echo "PIN is correct!<br>";
+} else {
+    echo "PIN is incorrect!<br>";
+}
+
 class SavingAccount extends BankAccount
 {
     private $interestRate;

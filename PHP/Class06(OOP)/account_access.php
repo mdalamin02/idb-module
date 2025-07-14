@@ -10,13 +10,14 @@ $account->setPin(1234);
 $account->deposit(1000);
 $account->setInterestRate(0.05);
 $account->addInterest();
-
+$account->checkPin(1212);
 echo "Account Balance with Interest rate is: " . $account->getBalance() . "<br>";
 
 $account->calcAnualFee();
 
+
+echo "<br>";
 // Example of PIN verification
-echo "<br>PIN verification test: ";
 if ($account->checkPin(1234)) {
     echo "PIN is correct!<br>";
 } else {
