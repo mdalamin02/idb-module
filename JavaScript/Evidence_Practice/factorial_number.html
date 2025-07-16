@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Number</title>
+</head>
+
+<body>
+    <script>
+
+        // Take Input from User
+        const number = parseInt(prompt("Enter a positive integer"))
+
+        //Check the number is less than 0
+        if (number < 0) {
+            document.write("Error factiorial for negetive number does not exit")
+        }
+         //Check the number is O 
+        else if (number == 0) {
+            document.write(`The Factorial of ${number} is 1`)
+        }
+        //Loop the inputed number 
+        else {
+            let fact = 1;
+            for (let i = 1; i <= number; i++) {
+                fact *= i;
+            }
+
+            document.write(`The Factorial number of ${number} is ${fact} `)
+        }
+    </script>
+</body>
+
+</html>
