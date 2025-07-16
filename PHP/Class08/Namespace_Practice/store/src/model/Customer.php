@@ -1,4 +1,5 @@
 <?php
+
 namespace store\src\model;
 
 class Customer
@@ -15,4 +16,3 @@ class Customer
         return $this->name;
     }
 }
-?>

@@ -1,51 +1,52 @@
 <?php
 
-    trait Subcriber
+trait Subscriber
+{
+    function SubscriberLogin()
     {
-         function subcriberLogin()
-        {
-            echo "Your are Logged as Subcriber <br>";
-        }
+        echo "You are logged in as Subscriber <br>";
     }
+}
 
-    trait Contributor
+trait Contributor
+{
+    function ContributorLogin()
     {
-         function  contributorLogin()
-        {
-          echo "Your are Logged as Contributor <br>";  
-        }
+        echo "You are logged in as Contributor <br>";
     }
+}
 
-    trait  Author 
+trait Author
+{
+    function AuthorLogin()
     {
-         function authorLogin()
-        {
-            echo "Your are Logged as Author <br>";
-        }
+        echo "You are logged in as Author <br>";
     }
+}
 
-    trait Administrator
+trait Administrator
+{
+    function AdministratorLogin()
     {
-        function administratorLogin()
-        {
-            echo "Your are Logged as Administrator <br>";
-        }
+        echo "You are logged in as Administrator <br>";
     }
-    
+}
 
-    Class AllUser
+
+class AllUser
+{
+    use Subscriber, Contributor, Author, Administrator;
+
+    public function Access()
     {
-        use Subcriber,Contributor,Author, Administrator;
+        $this->SubscriberLogin();
+        $this->ContributorLogin();
+        $this->AuthorLogin();
+        $this->AdministratorLogin();
 
-        public function run()
-        {
-            $this->subcriberLogin();
-            $this->contributorLogin();
-            $this->authorLogin();
-            $this->administratorLogin();
-            echo "All user are logged in!";
-        }
+        echo "All user logged in successfully!";
     }
-    $obj1 =new AllUser;
-    $Obj1->run();
-?>
+}
+
+$user = new AllUser;
+$user->Access();
