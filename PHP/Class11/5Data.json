@@ -1,0 +1,9 @@
+[
+  { "name": "Zahir Ahmed", "occupation": "Developer", "city": "Dhaka" },
+  { "name": "Raheba", "occupation": "manager", "city": "Dhaka" },
+  { "name": "Ratul", "occupation": "Officer", "city": "Khulna" },
+  { "name": "Shohorab", "occupation": "HR", "city": "Jessor" },
+  { "name": "Shahedul", "occupation": "Accountant", "city": "Cumilla" },
+  { "name": "Ahsan", "occupation": "Graphic Designer ", "city": "Rangpur" },
+  { "name": "Shahadat", "occupation": "IT Execute", "city": "Chittagong" }
+]
