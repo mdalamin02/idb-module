@@ -1,19 +1,22 @@
 <?php
 
-$conn = new mysqli("localhost", "root", "", "course_management");
+$conn= new mysqli('localhost', 'root', '', "course_management");
 
-if ($conn->connect_errno) 
+if ($conn->connect_errno)
 {
-    echo "Failed to connect to database server:".$conn->connect_error;
+    echo "Falied to connect to database server:".$conn->connect_error;
 }
 
-$sql = "INSERT INTO students(id, name, email,mobile_number, address, gender, date_of_birth, email_verified_at) VALUES ('', 'Jamal', 'jamal@gmail.com', '01212121212', 'Jigatola', 'male', '11997-01-10')";
+$sql = "INSERT INTO students (id, name, email, mobile_number, address, gender, date_of_birth, email_verified_at) VALUES ('', 'Jamil', 'jamil@gmial.com', '01732317079', 'jigatola', 'male', '1991-06-16',0)";
+
 
 if (!$conn->query($sql)) 
 {
-    echo "Error insterting data";
+    echo "Error inserting data";
 }
-else {
-    echo "Successfully inserted";
 
+else
+{
+    echo "Successfully inserted";
 }
+?>
