@@ -105,10 +105,10 @@ if (isset($_POST["submit"]))
         </p>
         <p>
             <label >Select Your Hobbies:</label><br>
-            <input type="checkbox" name="hobbies" value="surfing">Net Browsing
-            <input type="checkbox" name="hobbies" value="reading">Reading Book
-            <input type="checkbox" name="hobbies" value="blogging">Blogging
-            <input type="checkbox" name="hobbies" value="movies">Watching Waz
+            <input type="checkbox" name="hobbies[]" value="surfing">Net Browsing
+            <input type="checkbox" name="hobbies[]" value="reading">Reading Book
+            <input type="checkbox" name="hobbies[]" value="blogging">Blogging
+            <input type="checkbox" name="hobbies[]" value="movies">Watching Waz
         </p>
 
         <p>
