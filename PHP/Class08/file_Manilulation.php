@@ -1,98 +1,114 @@
 <?php
 
-// $var = readfile("readme.txt");
-// echo $var."<br>";
+// Output a file
+/* $fileName = "readme.txt";
+echo readfile($fileName); */
 
-// $file = "readme.txt";
+// Check a file exist and Copy
+/* $fileName = "readme.txt";
 
-// if (file_exists($file)) {
-//     copy($file, "readme2.txt");
-// }
-// else
-// {
-//     echo "No file found";
-// }
+if (file_exists($fileName)) {
+    copy($fileName, "readme2.txt");
+    echo "File existing";
+} else {
+    echo "File not existing";
+}
 
-// $file = "readme.txt";
+ */
+// File Rename
+/* $fileName = "readme2.txt";
 
-// if (file_exists($file)) {
-//     rename($file, "myFile.txt");
-//     echo "FIle renamed";
-// }
-// else
-// {
-//     echo "No file found";
-// }
+if (file_exists($fileName)) {
+    rename($fileName, "readme.txt");
+} else {
+    echo "Nothing to say anymore";
+}
+ */
 
-// $file = "readme.txt";
+// File Delete
 
-// if (file_exists($file)) {
-//     unlink($file, "myFile.txt");
-//     echo "FIle renamed";
-// }
-// else
-// {
-//     echo "No file found";
-// }
+/* $fileName = "readme2.txt";
 
-
-// $filename = "readme.txt";
-
-// if (!file_exists($filename)) {
-//     fopen($filename, "w");
-// }
-// else 
-// {
-//     echo "File already opened";
-// }
+if (file_exists(($fileName))) {
+    
+    unlink($fileName);
+    echo "File deleted successfully";
+}
+else
+{
+    echo "File not found";
+} */
 
 
-// $filename = "readme.txt";
-// $content = "This file automatically creted in server and it should contain user details informatin.";
+// Folder Create
+
+/* if (!file_exists("Testing")) {
+
+    mkdir("Testing"); // mkdir = Make Directory
+    echo "Folder created";
+}
+else    
+{
+    echo "Folder already Exist";
+}
+ */
+
+// File Read
+/* $fileName = "readme.txt";
+
+if (!file_exists($fileName)) {
+
+    fopen($fileName, "w");
+}
+else
+{
+    echo "File not exist";
+}
+ */
+
+// File Write
+
+$fileName = "readme.txt";
+$appendContent = "This is a new paragraph to write the content where everything are written successfully";
+
+if (is_writeable($fileName)) {
+
+    if (!$$handle = fopen($fileName, "a")) {
+        echo "Cannot open this file";
+        exit;
+    }
+    if (fwrite($handle, $appendContent) == FALSE) {
+        echo "Cannot Write in the file";
+        exit;
+    }
+    echo "File wrote successfully";
+    fclose($handle);
+} else {
+    echo "This is not writable";
+}
 
 
-// if (is_writable($filename)) 
-//     {
-   
-//     if (!$handle = fopen($filename, "a")) 
-//     {
-//         echo "Cannot open this file";
-//         exit;
-//     }
+// File Size
 
-//     if(fwrite($handle, $content)===FALSE)
-//     {
-//         echo "Cannot write in the file";
-//         exit;
-//     }
-//     echo "Wrote the content Successfully";
-// }
-// else
-// {
-//     echo "this file is not writable";
-//     return exit;
-// }
+/* $fileName = "readme.txt";
 
-
-$file = "readme.txt";
-
-echo filesize($file)."<br>";
-echo filetype($file)."<br>";
-echo realpath($file)."<br>";
+echo filesize($fileName);
+echo "<br>";
+echo filetype($fileName);
+echo "<br>";
+echo filetype("Testing");
+echo "<br>";
+echo realpath($fileName);
+echo "<br>";
 
 echo "<pre>";
-print_r(pathinfo($file));
+print_r(pathinfo($fileName));
 echo "</pre>";
 
-echo   "<BR>";
+echo "<br>";
+echo pathinfo($fileName, PATHINFO_EXTENSION);
 
-echo pathinfo($file, PATHINFO_EXTENSION);
+echo "<br>";
+$path = realpath($fileName);
 
-echo   "<BR>";
-
-$path = realpath($file);
-echo basename($path);
-?>
-
-
-
+echo basename($path); */

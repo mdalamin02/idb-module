@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Descending Sorting</title>
+	<style>
+		body
+		{
+			font-family: Arial, sans-serif;
+			text-align: center;
+			margin: 50px;
+		}
+
+		input, button
+		{
+			padding: 10px;
+			margin: 10px;
+			font-size: 16px;
+		}
+
+		#output
+		{
+			font-size: 20px;
+			font-weight: bold;
+			margin-top: 20px;
+			color: darkblue;
+		}
+	</style>
+</head>
+<body>
+
+<h2>Enter Numbers:</h2>
+	<input type="text" name="numberInput" id="numberInput" placeholder="Eg. 10,45,20,78">
+	<button onclick="sortNumbers()">Submit</button>
+
+	<div id="output"></div>
+
+	<script type="text/javascript">
+		function sortNumbers()
+		{
+			let input = document.getElementById("numberInput").value;
+			let numbers = input.split(",").map(num => parseFloat(num.trim()));
+			let sortNumbers = numbers.filter(num => !isNaN(num)).sort((a,b)=> b - a);
+			document.getElementById("output").innerHTML = "Sorted Numbers:" +sortNumbers.join(",");
+		}
+	</script>
+
+</body>
+</html>
