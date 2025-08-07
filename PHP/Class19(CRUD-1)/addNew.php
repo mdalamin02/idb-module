@@ -190,9 +190,9 @@ if(isset($_POST['btnsave']))
 			updateColorList();
 		}
 	}
-  
+
 	function updateColorList()
 	{
 		
-	} 
+	}
 </script>
